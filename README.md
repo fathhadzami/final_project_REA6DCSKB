@@ -1,6 +1,12 @@
-# 💸 PatunganApp
+<h1 align="center">
+💸 PatunganApp
+</h1>
 
+<p align="center">
 Aplikasi web untuk membagi tagihan belanja dengan teman-teman secara otomatis. Upload foto struk/bill, tambahkan teman, dan bagi tagihan dengan mudah!
+</p>
+
+## 🕸️ Kunjungi [Demo](https://patungan.streamlit.app)
 
 ## ✨ Fitur
 
@@ -70,6 +76,7 @@ Aplikasi akan berjalan di `http://localhost:8501`
 - Klik "Choose file" dan pilih foto struk
 - Tunggu AI menganalisis gambar
 - Klik "Next" untuk lanjut
+![Langkah 1](/assets/step1.png)
 
 ### Langkah 2: Edit Data Struk
 - Periksa data yang sudah diekstrak
@@ -77,21 +84,25 @@ Aplikasi akan berjalan di `http://localhost:8501`
 - Tambah/hapus/edit item belanja
 - Atur pajak dan service charge
 - Klik "Next"
+![Langkah 2](/assets/step2.png)
 
 ### Langkah 3: Tambah Teman
 - Masukkan nama teman-teman yang ikut patungan
 - Default sudah ada "Aku"
 - Klik "Next"
+![Langkah 3](/assets/step3.png)
 
 ### Langkah 4: Atur Pembagian
 - Pilih metode pembagian:
   - **Bagi Rata**: Semua bayar sama
   - **Berdasarkan Item**: Pilih siapa beli apa
 - Klik "Hitung Pembagian Item"
+![Langkah 4](/assets/step4.png)
 
 ### Langkah 5: Lihat Hasil
 - Cek berapa yang harus dibayar masing-masing
 - Detail pembagian per item (jika applicable)
+![Langkah 5](/assets/step5.png)
 
 ## 🔧 Struktur Project
 

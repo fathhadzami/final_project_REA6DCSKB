@@ -16,6 +16,16 @@ if not OPENROUTER_API_BASE:
 	st.error("OPENROUTER_API_BASE tidak ditemukan. Harap tambahkan di file .env Anda.")
 	st.stop()
 
+streamlit_style = """
+			<style>
+			@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+			html, body, [class*="css"]  {
+			font-family: 'Poppins', sans-serif;
+			}
+			</style>
+			"""
+st.markdown(streamlit_style, unsafe_allow_html=True)
 
 router = StreamlitRouter()
 bill_controller = BillController()

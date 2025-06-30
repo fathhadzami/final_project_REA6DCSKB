@@ -83,7 +83,7 @@ class BillController:
 					if step_num < current_step or step_num in ss.completed_steps:
 						st.markdown(f"<div style='text-align: center; color: green;'>{self.name_steps[i]} ✅</div>", unsafe_allow_html=True)
 					elif step_num == current_step:
-						st.markdown(f"<div style='text-align: center; color: yellow; font-weight: bold;'>{self.name_steps[i]}</div>", unsafe_allow_html=True)
+						st.markdown(f"<div style='text-align: center; color: #4663AC; font-weight: bold;'>{self.name_steps[i]}</div>", unsafe_allow_html=True)
 					else:
 						st.markdown(f"<div style='text-align: center; color: gray;'>{self.name_steps[i]}</div>", unsafe_allow_html=True)
 
@@ -101,7 +101,7 @@ class BillController:
 			image = Image.open(uploaded_file)
 			st.image(image=image, caption="Struk Terunggah", use_container_width=True)
 
-			if st.button(label="Next", disabled=not self.ai_service.is_api_ready):
+			if st.button(label="Next", disabled=not self.ai_service.is_api_ready, type="primary"):
 				with st.spinner("Menganalisis gambar..."):
 					bill_data, error = self.ai_service.extract_bill_data(image)
 
@@ -203,7 +203,7 @@ class BillController:
 			st.rerun()
 
 	def _splitting_bill(self):
-		st.subheader("🤑 Yuk kita buat patungannya")
+		st.subheader("🧾 Yuk kita buat patungannya")
 		results = {}
 		item_assignment = {}
 		name_friends = []
