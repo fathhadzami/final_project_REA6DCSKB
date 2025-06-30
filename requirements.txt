@@ -1,0 +1,6 @@
+streamlit==1.46.0
+streamlit-router==0.1.8
+python-dotenv==1.1.1
+pandas==2.3.0
+pillow==11.2.1
+requests==2.32.4
