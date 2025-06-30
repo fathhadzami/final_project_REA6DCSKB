@@ -1,6 +1,6 @@
-# Pisah Struk 💸
+# 💸 PatunganApp
 
-Aplikasi web untuk membagi tagihan belanja dengan teman-teman secara otomatis. Upload foto struk, tambahkan teman, dan bagi tagihan dengan mudah!
+Aplikasi web untuk membagi tagihan belanja dengan teman-teman secara otomatis. Upload foto struk/bill, tambahkan teman, dan bagi tagihan dengan mudah!
 
 ## ✨ Fitur
 
@@ -10,7 +10,6 @@ Aplikasi web untuk membagi tagihan belanja dengan teman-teman secara otomatis. U
 - 👥 **Kelola Teman**: Tambah daftar teman yang ikut patungan
 - 💰 **Metode Pembagian**:
   - Bagi rata untuk semua
-  - Berdasarkan persentase
   - Berdasarkan item yang dibeli
 - 📊 **Hasil Detail**: Laporan lengkap siapa bayar berapa
 
@@ -28,23 +27,31 @@ Aplikasi web untuk membagi tagihan belanja dengan teman-teman secara otomatis. U
 
 ### 1. Clone Repository
 ```bash
-git clone <repository-url>
-cd pisah-struk
+git clone https://github.com/fathhadzami/final_project_REA6DCSKB.git
+cd final_project_REA6DCSKB
 ```
 
-### 2. Install Dependencies
+### 2.  Buat virtual environment (direkomendasikan)
+    ```bash
+    python -m venv .venv
+    source .venv/bin/activate  # Di Windows, gunakan `venv\Scripts\activate`
+    ```
+
+### 3. Install Dependencies
+
 ```bash
-pip install streamlit streamlit-router pillow pandas python-dotenv requests
+pip install -r requirements.txt
 ```
 
-### 3. Setup Environment Variables
-Buat file `.env` di root directory:
+### 4. Setup Environment Variables
+Buat file `.env` atau bisa copy dari file `.env.example` di root directory:
 ```env
 OPENROUTER_API_KEY=your_openrouter_api_key_here
-OPENROUTER_API_BASE=https://openrouter.ai/api/v1
+OPENROUTER_API_BASE=https://openrouter.ai/api/v1/chat/completions
+AI_MODEL="anthropic/claude-3.5-sonnet"
 ```
 
-### 4. Dapatkan API Key
+### 5. Dapatkan API Key
 1. Daftar di [OpenRouter](https://openrouter.ai/)
 2. Buat API key baru
 3. Masukkan ke file `.env`
@@ -89,13 +96,17 @@ Aplikasi akan berjalan di `http://localhost:8501`
 ## 🔧 Struktur Project
 
 ```
-pisah-struk/
-├── app.py              # Main application file
-├── .env               # Environment variables (jangan di-commit!)
-├── .env.example       # Template environment variables
-├── requirements.txt   # Python dependencies
-├── README.md         # Documentation
-└── .gitignore        # Git ignore rules
+final_project_REA6DCSKB/
+├── app.py                  # Main application file
+├── .env                    # Environment variables (jangan di-commit!)
+├── .env.example            # Template environment variables
+├── requirements.txt        # Python dependencies
+├── README.md               # Documentation
+└── .gitignore              # Git ignore rules
+└── controllers
+    └── bill_controller.py  # Controller Class Page dan Perhitungan Bill
+└── services
+    └── ai_service.py       # Service Class penggunaan AI mengekstrak data dari gambar yang diupload
 ```
 
 ## 📋 Requirements.txt
@@ -132,50 +143,6 @@ requests>=2.28.0
 - Coba foto dengan pencahayaan yang baik
 - Edit manual data yang salah di Step 2
 
-## 🚧 Development
-
-### Menambah Fitur Baru
-1. Fork repository
-2. Buat branch baru: `git checkout -b feature/nama-fitur`
-3. Commit changes: `git commit -am 'Add some feature'`
-4. Push ke branch: `git push origin feature/nama-fitur`
-5. Submit Pull Request
-
-### Testing
-```bash
-# Run aplikasi dalam mode development
-streamlit run app.py --server.runOnSave true
-```
-
-## 📝 TODO / Roadmap
-
-- [ ] Support multiple currencies
-- [ ] Export hasil ke Excel/PDF
-- [ ] Simpan history pembagian
-- [ ] Integration dengan e-wallet
-- [ ] Mobile app version
-- [ ] Batch processing multiple struk
-
-## 🤝 Contributing
-
-Kontribusi selalu welcome! Silakan:
-1. Fork project
-2. Buat feature branch
-3. Commit perubahan
-4. Push ke branch
-5. Buat Pull Request
-
-## 📄 License
-
-Project ini menggunakan MIT License. Lihat file `LICENSE` untuk detail.
-
-## 📞 Support
-
-Jika ada pertanyaan atau masalah:
-- Buat issue di GitHub
-- Email: [your-email@example.com]
-- Discord: [your-discord]
-
 ## 🙏 Acknowledgments
 
 - [Streamlit](https://streamlit.io/) untuk framework yang amazing
@@ -184,6 +151,6 @@ Jika ada pertanyaan atau masalah:
 
 ---
 
-**Made with ❤️ by [Your Name]**
+**Made with ❤️ by Fath Hadzami**
 
 *Happy bill splitting! 💸*
