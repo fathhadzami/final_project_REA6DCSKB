@@ -39,7 +39,6 @@ class AIService:
 		Returns:
 			Tuple[bill_data, error]: Data struk yang diekstrak atau error message
 		"""
-		return self._get_mock_data(), None
 		try:
 			# Convert image to base64
 			base64_image = self.encode_image_to_base64(image)
