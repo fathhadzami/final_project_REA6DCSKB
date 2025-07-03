@@ -33,8 +33,8 @@ Aplikasi web untuk membagi tagihan belanja dengan teman-teman secara otomatis. U
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/fathhadzami/final_project_REA6DCSKB.git
-cd final_project_REA6DCSKB
+git clone https://github.com/fathhadzami/patungan-app.git
+cd patungan-app
 ```
 
 ### 2.  Buat virtual environment (direkomendasikan)
@@ -107,7 +107,7 @@ Aplikasi akan berjalan di `http://localhost:8501`
 ## 🔧 Struktur Project
 
 ```
-final_project_REA6DCSKB/
+patungan-app/
 ├── app.py                  # Main application file
 ├── .env                    # Environment variables (jangan di-commit!)
 ├── .env.example            # Template environment variables
